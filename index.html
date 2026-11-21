@@ -1,0 +1,319 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book - دفتر المحاسبة amhaz</title><style>
+:root{color-scheme:light;--navy:#09213d;--blue:#2367a6;--gold:#e7b34d;--ink:#172b45;--muted:#718096;--line:#dce6f2}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:0 14px 28px;background:radial-gradient(ellipse at 15% 0%,#d8eaff 0,transparent 42%),linear-gradient(180deg,#eaf1fa,#f5f7fb);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}
+header{max-width:760px;margin:0 auto 18px;padding:28px 20px 24px;border-radius:0 0 28px 28px;background:linear-gradient(130deg,#071a31,#174b7c 68%,#286da4);color:#fff;box-shadow:0 16px 34px #0b315327;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#8bc8ff22;right:-80px;top:-125px}
+h1{font-size:25px;margin:0 0 7px;color:#fff;position:relative;z-index:1}header p{margin:0;color:#d9e9f8;position:relative;z-index:1}
+main{max-width:760px;margin:auto}.c{background:rgba(255,255,255,.9);border:1px solid #fff;border-radius:19px;padding:16px;margin:12px 0;box-shadow:0 8px 24px #173c6410;backdrop-filter:blur(12px)}
+.c b{font-size:16px;display:block;margin-bottom:10px}.c div{display:flex;gap:7px;flex-wrap:wrap}a{background:linear-gradient(135deg,#174675,#2e79b5);color:#fff;text-decoration:none;padding:9px 15px;border-radius:12px;font-weight:bold;box-shadow:0 4px 10px #1b568b22;min-width:68px;text-align:center}
+a:active{transform:scale(.97)}
+.bottombar{display:flex;justify-content:center;margin:18px auto 4px;max-width:760px}
+.bottombar button{border:none;border-radius:14px;padding:13px 26px;font-weight:bold;font-size:16px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.12);width:100%;max-width:760px}
+.btn-add{background:linear-gradient(135deg,#e7b34d,#f2c96e);color:#071a31}
+.shop-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.shop-head b{margin:0;flex:1}
+.shop-actions{display:flex;gap:6px}
+.shop-actions button{border:1px solid #dce6f2;background:#fff;border-radius:10px;padding:6px 10px;font-size:13px;cursor:pointer}
+.hint{text-align:center;color:#718096;font-size:13px;margin:8px 0}
+.login-card{background:#fff;border:1px solid #dce6f2;border-radius:16px;padding:14px;margin:12px auto;max-width:760px;box-shadow:0 8px 24px #173c6410;text-align:center}
+.login-card b{display:block;margin-bottom:6px;font-size:15px}
+.login-card p{margin:0 0 10px;color:#718096;font-size:13px}
+.btn-google{background:#fff;border:1px solid #dadce0;color:#3c4043;padding:11px 18px;border-radius:12px;font-weight:bold;font-size:15px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.btn-google span{font-size:18px}
+.btn-small{border:1px solid #dce6f2;background:#fff;border-radius:10px;padding:7px 12px;font-size:13px;cursor:pointer;margin:3px}
+.btn-small.gold{background:linear-gradient(135deg,#e7b34d,#f2c96e);border:none;color:#071a31;font-weight:bold}
+#loginOverlay{position:fixed;inset:0;background:linear-gradient(180deg,#071a31,#174b7c);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{background:#fff;border-radius:22px;padding:26px 22px;max-width:400px;width:100%;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.login-box h2{margin:0 0 8px;font-size:22px;color:#071a31}
+.login-box p{margin:0 0 16px;color:#718096;font-size:14px;line-height:1.6}
+.login-box .btn-google{width:100%;justify-content:center;padding:14px;font-size:16px}
+#appContent.hidden{display:none}
+#googleModal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10000;display:none;align-items:center;justify-content:center;padding:20px}
+.google-modal-box{background:#fff;border-radius:18px;padding:22px;width:100%;max-width:360px;text-align:center}
+.google-modal-box h3{margin:0 0 8px;font-size:18px;color:#071a31}
+.google-modal-box p{margin:0 0 14px;color:#718096;font-size:13px;line-height:1.6}
+.google-modal-box input{width:100%;padding:12px;border:1px solid #dce6f2;border-radius:10px;font-size:15px;margin-bottom:10px;text-align:left;direction:ltr}
+.google-modal-box input::placeholder{color:#a0aec0}
+.google-modal-box .btn-google{width:100%;justify-content:center}
+.google-modal-box .btn-cancel{background:transparent;border:none;color:#718096;padding:10px;cursor:pointer;font-size:13px;margin-top:6px}
+@media(max-width:430px){body{padding:0 10px 20px}header{padding:25px 17px 22px}h1{font-size:22px}.c{padding:14px;border-radius:17px}.c b{font-size:14px}a{padding:8px 11px;font-size:13px;min-width:58px}}
+
+/* ===== NEW APP - Book splash ===== */
+body.book-splash { background: #000 !important; }
+.book-hero{ position:relative; height: 340px; border-radius: 22px; overflow:hidden; margin: 0 auto 14px; max-width:760px; background:#000 url('login_bg.jpg') center/cover no-repeat; box-shadow:0 16px 34px rgba(0,0,0,.35); }
+.book-hero:after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.65)); }
+.book-logo{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; text-align:center; color:#fff; }
+.book-logo .big{ font-size:72px; font-weight:900; letter-spacing:-2px; line-height:1; text-shadow:0 4px 20px rgba(0,0,0,.6); }
+.book-logo .big span{ display:inline-block; }
+.book-logo .sub{ font-size:16px; letter-spacing:2px; opacity:.9; margin-top:6px; }
+.book-logo .amhaz{ font-size:13px; opacity:.75; margin-top:4px; }
+
+/* ===== PROFESSIONAL BOOK THEME - v2 ===== */
+:root{ --paper:#F7F2E7; --card:#FFFFFF; --ink:#111111; --gold:#C9A227; --gold2:#E8C84A; --muted:#8A8578; --line:#E8DFC8; }
+body{ background:var(--paper) !important; font-family:'Segoe UI',system-ui,-apple-system,sans-serif !important; color:var(--ink) !important; }
+header{ background:#111 !important; color:#fff !important; border-radius:0 0 24px 24px !important; padding:18px 16px 20px !important; box-shadow:0 10px 30px rgba(0,0,0,.25) !important; position:relative; overflow:hidden; }
+header:after{ content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,#C9A227,#E8C84A,#C9A227); }
+header h1, header .title{ color:#fff !important; letter-spacing:.5px !important; }
+.book-hero{ height:200px !important; border-radius:20px !important; margin:14px auto !important; box-shadow:0 12px 28px rgba(0,0,0,.18) !important; }
+.book-logo .big{ font-size:54px !important; font-family:Georgia,serif !important; font-weight:900 !important; }
+.card, .shop-card, .shop, .item, .box{ background:var(--card) !important; border:1px solid var(--line) !important; border-radius:18px !important; box-shadow:0 6px 18px rgba(0,0,0,.06) !important; padding:14px !important; }
+button, .btn{ border-radius:12px !important; font-weight:700 !important; }
+button.primary, .btn-primary{ background:#111 !important; color:#fff !important; border:1px solid #111 !important; }
+button.gold, .btn-gold{ background:linear-gradient(135deg,#C9A227,#E8C84A) !important; color:#111 !important; border:none !important; }
+input, select{ border-radius:12px !important; border:1px solid #DDD5BE !important; padding:11px 12px !important; background:#fff !important; }
+.shop-card{ display:flex; align-items:center; gap:12px; }
+.shop-card:before{ content:"📖"; font-size:28px; }
+.balance{ font-size:20px !important; font-weight:800 !important; }
+.positive{ color:#1A7F4A !important; } .negative{ color:#C0392B !important; }
+.top-stats{ display:flex; gap:10px; margin:12px 0; }
+.top-stats .stat{ flex:1; background:#111; color:#fff; border-radius:16px; padding:12px; text-align:center; }
+.top-stats .stat b{ display:block; font-size:18px; color:#E8C84A; }
+.top-stats .stat span{ font-size:12px; opacity:.8; }
+
+/* ===== GLASSMORPHISM BLUE THEME - like example ===== */
+:root{ --glass-bg:#EAF0FF; --glass-card:rgba(255,255,255,.78); --glass-border:rgba(255,255,255,.9); --blue1:#4A90FF; --blue2:#1D4ED8; --blue-grad:linear-gradient(135deg,#3B9BFF,#1D4ED8); --ink:#0F1B3D; --muted:#6B7A9F; }
+body{ background:linear-gradient(180deg,#EAF0FF 0%,#F5F8FF 45%,#E8F0FF 100%) !important; color:var(--ink) !important; font-family:'Segoe UI',system-ui,-apple-system,sans-serif !important; min-height:100vh; }
+body:before{ content:""; position:fixed; top:-80px; left:-80px; width:260px; height:260px; background:radial-gradient(circle,#A8C6FF 0%,transparent 70%); border-radius:50%; opacity:.7; pointer-events:none; z-index:0; }
+body:after{ content:""; position:fixed; bottom:-60px; right:-60px; width:280px; height:280px; background:radial-gradient(circle,#C3D4FF 0%,transparent 70%); border-radius:50%; opacity:.6; pointer-events:none; z-index:0; }
+header{ background:rgba(255,255,255,.65) !important; backdrop-filter:blur(16px) !important; color:var(--ink) !important; border:1px solid rgba(255,255,255,.9) !important; border-radius:24px !important; margin:12px !important; box-shadow:0 12px 30px rgba(59,130,246,.12) !important; }
+header:after{ display:none !important; }
+header h1, header .title{ color:var(--ink) !important; }
+.book-hero{ background:transparent !important; box-shadow:none !important; height:auto !important; padding:18px 0 4px !important; }
+.book-logo{ position:static !important; transform:none !important; color:var(--ink) !important; text-shadow:none !important; }
+.book-logo .big{ color:#0F1B3D !important; text-shadow:none !important; font-size:32px !important; letter-spacing:-.5px !important; }
+.book-logo .sub{ color:#6B7A9F !important; letter-spacing:4px !important; font-size:13px !important; text-transform:uppercase; }
+.book-logo .amhaz{ color:#6B7A9F !important; }
+/* Glass logo square like example */
+.glass-logo{ width:110px; height:110px; margin:0 auto 14px; background:rgba(255,255,255,.85); border:1px solid rgba(255,255,255,.95); border-radius:32px; box-shadow:0 16px 32px rgba(59,130,246,.18), inset 0 1px 0 rgba(255,255,255,1); display:flex; align-items:center; justify-content:center; font-size:54px; }
+.glass-logo img{ width:72px; height:72px; object-fit:contain; }
+.card, .shop-card, .shop, .item, .box{ background:rgba(255,255,255,.78) !important; backdrop-filter:blur(14px) !important; border:1px solid rgba(255,255,255,.95) !important; border-radius:22px !important; box-shadow:0 10px 26px rgba(59,130,246,.10), inset 0 1px 0 rgba(255,255,255,1) !important; }
+input, select{ background:rgba(255,255,255,.9) !important; border:1px solid rgba(255,255,255,.95) !important; border-radius:18px !important; box-shadow:0 6px 16px rgba(59,130,246,.08), inset 0 1px 0 #fff !important; padding:14px 14px !important; color:#0F1B3D !important; }
+button, .btn{ border-radius:999px !important; font-weight:700 !important; }
+button.primary, .btn-primary, .login-btn{ background:linear-gradient(135deg,#3B9BFF,#1D4ED8) !important; color:#fff !important; border:none !important; box-shadow:0 12px 24px rgba(37,99,235,.35) !important; padding:14px !important; }
+.top-stats .stat{ background:rgba(255,255,255,.78) !important; backdrop-filter:blur(14px) !important; border:1px solid rgba(255,255,255,.95) !important; border-radius:20px !important; color:#0F1B3D !important; box-shadow:0 10px 22px rgba(59,130,246,.10) !important; }
+.top-stats .stat b{ color:#2563EB !important; font-size:20px !important; }
+.top-stats .stat span{ color:#6B7A9F !important; }
+/* Welcome block */
+.welcome-block{ text-align:center; margin:6px auto 14px; max-width:760px; }
+.welcome-block h2{ font-size:32px; font-weight:900; color:#0F1B3D; margin:0; letter-spacing:-.5px; }
+.welcome-block p{ color:#6B7A9F; letter-spacing:3px; font-size:12px; text-transform:uppercase; margin:6px 0 0; }
+.or-divider{ display:flex; align-items:center; gap:12px; color:#8A9AB8; font-size:11px; letter-spacing:2px; margin:16px auto; max-width:760px; }
+.or-divider:before, .or-divider:after{ content:""; flex:1; height:1px; background:#CBD5E1; }
+.social-row{ display:flex; gap:12px; justify-content:center; margin:10px 0; }
+.social-row .soc{ width:64px; height:64px; background:rgba(255,255,255,.85); border:1px solid #fff; border-radius:20px; box-shadow:0 10px 20px rgba(59,130,246,.10); display:flex; align-items:center; justify-content:center; font-size:26px; }
+</style></head><body><div id="loginOverlay" style="display:none"><div class="login-box"><div style="font-size:42px;margin-bottom:10px">📒</div><h2>Book - دفتر المحاسبة amhaz</h2><p>سجّل دخول بحسابك لتشوف محلاتك ومعلوماتك على أي تلفون.<br><span style="font-size:12px">أول مرة؟ اكتب إيميلك وكلمة سر (6 أحرف على الأقل) واضغط «حساب جديد».</span></p><input id="accEmail" type="email" placeholder="الإيميل" autocomplete="email" style="display:block;width:100%;padding:13px;margin:7px 0;border:1px solid #dce6f2;border-radius:12px;font-size:15px;box-sizing:border-box;direction:ltr;text-align:left"><input id="accPass" type="password" placeholder="كلمة سر الحساب" autocomplete="current-password" style="display:block;width:100%;padding:13px;margin:7px 0;border:1px solid #dce6f2;border-radius:12px;font-size:15px;box-sizing:border-box;direction:ltr;text-align:left"><div id="accMsg" style="min-height:20px;font-size:13px;margin:4px 0;color:#c0392b"></div><button onclick="accLogin()" style="display:block;width:100%;border:none;border-radius:999px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;background:#174675;color:#fff">دخول</button><button onclick="accCreate()" style="display:block;width:100%;border:none;border-radius:999px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;background:#e7b34d;color:#071a31">حساب جديد</button><button onclick="accReset()" style="background:transparent;border:none;color:#2e79b5;font-size:13px;padding:10px;cursor:pointer;margin-top:4px">نسيت كلمة سر الحساب؟</button></div></div><div id="appContent"><header><h1>📒 Book - دفتر المحاسبة amhaz</h1><p>إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر</p></header>
+
+<div class="welcome-block">
+  <div class="glass-logo">📖</div>
+  <h2>Welcome Back</h2>
+  <p>Sign in to continue &nbsp;•&nbsp; دفتر المحاسبة amhaz</p>
+</div>
+<div class="book-hero" style="display:none;"><div class="book-logo"><div class="big">Book</div><div class="sub">دفتر المحاسبة</div><div class="amhaz">amhaz</div></div>
+<div class="top-stats" style="max-width:760px;margin:12px auto;">
+  <div class="stat"><span>إجمالي المحلات</span><b id="stat-shops">—</b></div>
+  <div class="stat"><span>اليوم</span><b id="stat-today">—</b></div>
+  <div class="stat"><span>الشهر</span><b id="stat-month">—</b></div>
+</div>
+
+<div class="or-divider">OR CONTINUE WITH</div>
+<div class="social-row"><div class="soc">🔵</div><div class="soc">G</div><div class="soc">f</div></div>
+<p style="text-align:center;color:#8A9AB8;font-size:11px;letter-spacing:2px;margin:14px 0;">MANAGE • TRACK • GROW TOGETHER</p>
+<script>try{ setTimeout(()=>{ var s=document.querySelectorAll('.shop-card,.shop').length; var el=document.getElementById('stat-shops'); if(el) el.textContent=s||'—'; var d=new Date(); var t=document.getElementById('stat-today'); if(t) t.textContent=d.getDate()+' / '+(d.getMonth()+1); var m=document.getElementById('stat-month'); if(m) m.textContent=(d.getMonth()+1)+' / '+d.getFullYear(); },800);}catch(e){}</script>
+</div>
+
+<div style="max-width:760px;margin:10px auto 0;display:flex;justify-content:flex-end"><button onclick="openSettings()" style="border:1px solid #dce6f2;background:#fff;border-radius:12px;padding:8px 14px;font-size:14px;cursor:pointer">⚙️ إعدادات</button></div>
+<div id="settingsModal" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:none;align-items:center;justify-content:center;padding:20px"><div style="background:#fff;border-radius:18px;padding:20px;width:100%;max-width:380px;text-align:center"><h3 style="margin:0 0 12px">⚙️ إعدادات البرنامج</h3><div id="settingsContent"></div><button onclick="closeSettings()" style="margin-top:14px;background:transparent;border:none;color:#718096;padding:8px;cursor:pointer">سكّر</button></div></div>
+<p class="hint">كبس ✏️ عدّل لتعديل اسم المحل.</p>
+<main id="shopsList"></main>
+<div class="bottombar"><button class="btn-add" onclick="addShop()">➕ زيد محل جديد</button></div><script>(function(){function has(u){try{var x=new XMLHttpRequest();x.open('GET',u,false);x.send();return x.status>=200&&x.status<300;}catch(e){return false;}}var V='https://www.gstatic.com/firebasejs/10.12.2/';['firebase-app-compat.js','firebase-auth-compat.js','firebase-firestore-compat.js'].forEach(function(f){document.write('<script src="'+(has('vendor/'+f)?'vendor/'+f:V+f)+'"><\/script>');});})();</script><script src="firebase-config.js"></script><script src="shim.js"></script><script>
+// السنوات بتزيد لحالها: من 2026 لحد سنة اليوم + 5، وما بتقل عن 2035
+const START_YEAR=2026;
+const END_YEAR=Math.max(2035, new Date().getFullYear()+5);
+const YEARS=[]; for(let y=START_YEAR;y<=END_YEAR;y++) YEARS.push(y);
+const DEFAULT_SHOPS=[
+ {name:'الصمدي الرويس',code:'ruwais'},
+ {name:'كعكة الأرز',code:'arz'},
+ {name:'الصمدي البرج',code:'burj'},
+ {name:'الصمدي المجمع',code:'mujamma'},
+ {name:'ملحمة الصمدي',code:'malhama'},
+ {name:'محل 6',code:'shop6'},
+ {name:'محل 7',code:'shop7'},
+ {name:'محل 8',code:'shop8'},
+ {name:'محل 9',code:'shop9'},
+ {name:'محل 10',code:'shop10'}
+];
+const KEY='daftar2_shops_v1';
+function loadShops(){
+ try{
+  const s=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(Array.isArray(s)&&s.length) return s;
+ }catch(e){}
+ return JSON.parse(JSON.stringify(DEFAULT_SHOPS));
+}
+let shops=loadShops();
+function saveShops(){ try{ localStorage.setItem(KEY, JSON.stringify(shops)); }catch(e){} syncShopsToCloud(); }
+// ===== مزامنة سحابية: كل حساب بيشوف محلاته بس =====
+async function syncShopsToCloud(){
+  const u=DaftarAuth.currentUser(); if(!u) return;
+  try{ await firebase.firestore().collection('users').doc(u.uid).set({shops:shops, updatedAt:Date.now()},{merge:true}); }catch(e){}
+}
+async function loadShopsFromCloud(){
+  const u=DaftarAuth.currentUser(); if(!u) return false;
+  try{
+    const snap=await firebase.firestore().collection('users').doc(u.uid).get();
+    if(snap.exists){
+      const d=snap.data();
+      if(Array.isArray(d.shops) && d.shops.length){ shops=d.shops; saveShopsLocalOnly(); renderShops(); return true; }
+    }
+  }catch(e){}
+  return false;
+}
+function saveShopsLocalOnly(){ try{ localStorage.setItem(KEY, JSON.stringify(shops)); }catch(e){} }
+// لما نغيّر كلمة السر، زامنها على السحابة كمان
+const _origChangePassword = null;
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function renderShops(){
+ const el=document.getElementById('shopsList');
+ el.innerHTML=shops.map((sh,idx)=>{
+  const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+  const curY=new Date().getFullYear();
+  return `<div class="c" onclick="openShopDirect(${idx})" style="cursor:pointer"><div class="shop-head"><b>${esc(sh.name)}</b><div class="shop-actions"><button onclick="event.stopPropagation();editShop(${idx})" title="عدّل الاسم">${T.edit}</button></div></div><div style="color:#718096;font-size:13px;margin-top:4px">${getLang()==='en' ? 'Tap to open book →' : 'كبس لتفتح الدفتر ←'}</div></div>`;
+ }).join('');
+}
+function openShopDirect(idx){
+  const sh=shops[idx]; if(!sh) return;
+  const curY=new Date().getFullYear();
+  // فوت دغري على دفتر هالسنة، بلا أي شباك ولا اختيار
+  window.location.href=`ledger.html?b=${encodeURIComponent(sh.code+'-'+curY)}&y=${curY}&n=${encodeURIComponent(sh.name)}`;
+}
+function addShop(){
+ const name=prompt('اسم المحل الجديد:');
+ if(!name||!name.trim()) return;
+ const clean=name.trim();
+ // كود فريد للمحل الجديد - ما بيتكرر
+ const code='shop'+Date.now().toString().slice(-8);
+ shops.push({name:clean,code:code});
+ saveShops(); renderShops();
+}
+async function editShop(idx){
+ const sh=shops[idx]; if(!sh) return;
+ const choice=prompt('شو بدك تعمل بـ "'+sh.name+'"؟\nاكتب 1 للتعديل، 2 للحذف:', '1');
+ if(choice===null) return;
+ if(String(choice).trim()==='2'){
+  const okPw=await DaftarAuth.ask({mode:'confirm', title:'حط كلمة السر لتمسح المحل'});
+  if(!okPw) return;
+  if(!confirm('أكيد بدك تمسح "'+sh.name+'"؟')) return;
+  shops.splice(idx,1);
+  saveShops(); renderShops();
+  return;
+ }
+ const name=prompt('عدّل اسم المحل:', sh.name);
+ if(!name||!name.trim()) return;
+ sh.name=name.trim();
+ saveShops(); renderShops();
+}
+
+// ===== كلمة السر (مشفّرة - بتتحكم فيها shim.js) =====
+function changePassword(){ DaftarAuth.changeInteractive().then(function(){ renderLogin(); }); }
+
+// ===== حساب Firebase (إيميل + كلمة سر) =====
+let authReady=false;
+const CLOUD=DaftarAuth.cloudEnabled();
+function accMsg(m,ok){ const el=document.getElementById('accMsg'); if(el){ el.textContent=m||''; el.style.color=ok?'#2f855a':'#c0392b'; } }
+function accErr(e){
+  const c=(e&&e.code)||'';
+  if(/invalid-credential|wrong-password|user-not-found|invalid-login/.test(c)) return 'الإيميل أو كلمة السر غلط';
+  if(c==='auth/email-already-in-use') return 'هيدا الإيميل مسجّل من قبل، اضغط «دخول»';
+  if(c==='auth/weak-password') return 'كلمة السر ضعيفة، لازم 6 أحرف على الأقل';
+  if(c==='auth/invalid-email') return 'الإيميل مش مكتوب صح';
+  if(c==='auth/network-request-failed') return 'ما في انترنت';
+  if(c==='auth/too-many-requests') return 'محاولات كتير، استنّى شوي وجرّب';
+  if(c==='auth/operation-not-allowed') return 'لازم تفعّل Email/Password بـ Firebase Console';
+  return 'صار خطأ: '+((e&&e.message)||c||'');
+}
+function accVals(){ return {email:(document.getElementById('accEmail').value||'').trim(), pass:document.getElementById('accPass').value||''}; }
+async function accLogin(){
+  const v=accVals(); if(!v.email||!v.pass){ accMsg('اكتب الإيميل وكلمة السر'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  accMsg('⏳ لحظة...',true);
+  try{ await firebase.auth().signInWithEmailAndPassword(v.email,v.pass); accMsg(''); }catch(e){ accMsg(accErr(e)); }
+}
+async function accCreate(){
+  const v=accVals(); if(!v.email||!v.pass){ accMsg('اكتب الإيميل وكلمة السر'); return; }
+  if(v.pass.length<6){ accMsg('كلمة السر لازم 6 أحرف على الأقل'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  accMsg('⏳ لحظة...',true);
+  try{ await firebase.auth().createUserWithEmailAndPassword(v.email,v.pass); accMsg(''); }catch(e){ accMsg(accErr(e)); }
+}
+async function accReset(){
+  const v=accVals(); if(!v.email){ accMsg('اكتب إيميلك أول'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  try{ await firebase.auth().sendPasswordResetEmail(v.email); accMsg('✅ بعتنالك رابط على الإيميل لتغيّر كلمة سر الحساب',true); }catch(e){ accMsg(accErr(e)); }
+}
+function accLogout(){
+  if(!confirm('أكيد بدك تسجّل خروج؟')) return;
+  try{ firebase.auth().signOut(); }catch(e){}
+}
+function initAuth(){
+  if(!CLOUD || !DaftarAuth.sdkLoaded()){ authReady=true; renderLogin(); return; }
+  DaftarAuth.currentUser(); // بيجهّز Firebase
+  firebase.auth().onAuthStateChanged(function(u){
+    authReady=true; renderLogin();
+    if(u){ loadShopsFromCloud().then(function(found){ if(!found) syncShopsToCloud(); renderShops(); renderLogin(); }); }
+  });
+}
+// --- Language AR / EN ---
+const DM_LANGS = {
+  ar: { title:'📒 Book - دفتر المحاسبة amhaz', subtitle:'إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر', settings:'⚙️ إعدادات', hint:'كبس على اسم المحل لتفتح الدفتر، وكبس ✏️ عدّل لتعديل اسم المحل.', addShop:'+ إضافة محل جديد', close:'سكّر', settingsTitle:'⚙️ إعدادات البرنامج', welcome:'👋 أهلاً،', loggedGoogle:'مسجّل دخول عبر Google — ', loggedPhone:'📱 رقم: ', changePass:'🔑 تغيير كلمة السر', logout:'🚪 تسجيل خروج', notLogged:'👤 مش مسجّل دخول', loginHint:'سجّل دخول من الشاشة الرئيسية.', syncNote:'نفس الإيميل على أي تلفون = نفس المحلات ونفس المعلومات', passNote:'كلمة السر للحذف: فيك تغيرها من هون. المزامنة على السحابة: شغالة.', langTitle:'🌍 اللغة / Language', langHint:'اختر لغة البرنامج / Choose app language', edit:'✏️ عدّل' },
+  en: { title:'📒 Accounting Book amhaz', subtitle:'Manage accounts & branches — tap shop to open book', settings:'⚙️ Settings', hint:'Tap shop name to open book, tap ✏️ Edit to edit shop name.', addShop:'+ Add new shop', close:'Close', settingsTitle:'⚙️ App Settings', welcome:'👋 Hello,', loggedGoogle:'Logged in via Google — ', loggedPhone:'📱 Phone: ', changePass:'🔑 Change password', logout:'🚪 Logout', notLogged:'👤 Not logged in', loginHint:'Login from main screen.', syncNote:'Same Gmail on any phone = same shops and same data', passNote:'Delete password: you can change it here. Cloud sync: on.', langTitle:'🌍 Language / اللغة', langHint:'Choose app language / اختر لغة البرنامج', edit:'✏️ Edit' }
+};
+function getLang(){ try{ return localStorage.getItem('dm_lang')||'ar'; }catch(e){ return 'ar'; } }
+function setLang(l){ try{ localStorage.setItem('dm_lang', l); }catch(e){} applyLang(); renderLogin(); }
+function applyLang(){
+  const l=getLang(); const T=DM_LANGS[l]||DM_LANGS.ar;
+  document.documentElement.lang=l; document.documentElement.dir=(l==='ar'?'rtl':'ltr');
+  const h1=document.querySelector('header h1'); if(h1) h1.textContent=T.title;
+  const sub=document.querySelector('header p'); if(sub) sub.textContent=T.subtitle;
+  const stBtn=document.querySelector('button[onclick="openSettings()"]'); if(stBtn) stBtn.textContent=T.settings;
+  const hint=document.querySelector('.hint'); if(hint) hint.textContent=T.hint;
+  const addBtn=document.querySelector('button[onclick="addShop()"]'); if(addBtn) addBtn.textContent=T.addShop;
+  const closeBtn=document.querySelector('#settingsModal button[onclick="closeSettings()"]'); if(closeBtn) closeBtn.textContent=T.close;
+  const stTitle=document.querySelector('#settingsModal h3'); if(stTitle) stTitle.textContent=T.settingsTitle;
+  // lang buttons highlight
+  const arB=document.getElementById('langArBtn'); const enB=document.getElementById('langEnBtn');
+  if(arB&&enB){ if(l==='ar'){ arB.style.background='#1b3a5f'; arB.style.color='#fff'; enB.style.background='#fff'; enB.style.color='#000'; } else { enB.style.background='#1b3a5f'; enB.style.color='#fff'; arB.style.background='#fff'; arB.style.color='#000'; } }
+  // edit buttons
+  document.querySelectorAll('button[onclick^="editShop"]').forEach(b=>{ if(b.textContent.includes('عدّل')||b.textContent.includes('Edit')) b.textContent=T.edit; });
+}
+function renderLogin(){
+  const el=document.getElementById('settingsContent');
+  const overlay=document.getElementById('loginOverlay');
+  const app=document.getElementById('appContent');
+  const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+  const en=getLang()==='en';
+  const user=CLOUD?DaftarAuth.currentUser():null;
+  const needLogin=CLOUD && !user;
+  if(overlay) overlay.style.display=(needLogin && authReady)?'flex':'none';
+  if(app) app.classList.toggle('hidden', needLogin);
+  if(needLogin && authReady && !DaftarAuth.sdkLoaded()) accMsg('ما قدرت حمّل المزامنة. تأكد من الانترنت وافتح البرنامج من جديد.');
+  const box='text-align:right;background:#f5f7fb;border-radius:12px;padding:12px;margin-bottom:12px';
+  let acct;
+  if(CLOUD && user){
+    acct=`<div style="${box}"><b>${T.welcome} ${esc(user.email||'')}</b><div style="color:#718096;font-size:12px;margin-top:4px">${T.syncNote}</div></div><div><button class="btn-small gold" onclick="changePassword()">${T.changePass}</button><button class="btn-small" onclick="accLogout()">${T.logout}</button></div>`;
+  } else if(CLOUD){
+    acct=`<b>${T.notLogged}</b><p>${T.loginHint}</p>`;
+  } else {
+    acct=`<div style="${box}"><b>📱 ${en?'Local mode (no sync)':'وضع محلي (بدون مزامنة)'}</b><div style="color:#718096;font-size:12px;margin-top:4px">${en?'Data is saved on this phone only. Fill firebase-config.js to enable sync.':'المعلومات محفوظة على هالتلفون بس. لتفعيل المزامنة عبّي إعدادات Firebase بملف firebase-config.js.'}</div></div><div><button class="btn-small gold" onclick="changePassword()">${T.changePass}</button></div>`;
+  }
+  if(el) el.innerHTML=acct+`<div style="margin-top:16px;text-align:right;background:#fff7e0;border:1px solid #f0d48a;border-radius:12px;padding:12px"><b>🌍 اللغة / Language</b><div style="display:flex;gap:8px;margin-top:8px"><button onclick="setLang('ar')" id="langArBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #1b3a5f;background:#1b3a5f;color:#fff;font-weight:bold;cursor:pointer">العربية</button><button onclick="setLang('en')" id="langEnBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #dce6f2;background:#fff;cursor:pointer">English</button></div><div style="color:#718096;font-size:12px;margin-top:6px">اختر لغة البرنامج / Choose app language</div></div>`;
+}
+function openSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='flex'; renderLogin(); }
+function closeSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='none'; }
+document.addEventListener('keydown', function(e){
+  if(e.key==='Enter'){ const ov=document.getElementById('loginOverlay'); if(ov && ov.style.display==='flex'){ accLogin(); } }
+});
+if(!DaftarAuth.hasPassword()) DaftarAuth.ask({mode:'setup'});
+renderLogin();
+renderShops();
+initAuth();
+</script></div></body></html>
