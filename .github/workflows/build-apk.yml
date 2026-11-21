@@ -24,7 +24,9 @@ jobs:
       - run: npx cap add android
       - name: Set app icon (Book - stacked books)
         run: |
-          for d in android/app/src/main/res/mipmap-hdpi android/app/src/main/res/mipmap-mdpi android/app/src/main/res/mipmap-xhdpi android/app/src/main/res/mipmap-xxhdpi android/app/src/main/res/mipmap-xxxhdpi; do mkdir -p "$d"; cp icon.png "$d/ic_launcher.png"; cp icon.png "$d/ic_launcher_round.png"; done
+          for d in android/app/src/main/res/mipmap-hdpi android/app/src/main/res/mipmap-mdpi android/app/src/main/res/mipmap-xhdpi android/app/src/main/res/mipmap-xxhdpi android/app/src/main/res/mipmap-xxxhdpi; do mkdir -p "$d"; cp icon.png "$d/ic_launcher.png"; cp icon.png "$d/ic_launcher_round.png"; cp icon.png "$d/ic_launcher_foreground.png"; done
+          rm -rf android/app/src/main/res/mipmap-anydpi-v26
+          mkdir -p android/app/src/main/res/drawable && cp icon.png android/app/src/main/res/drawable/ic_launcher_foreground.png
           ls -R android/app/src/main/res/mipmap-xxxhdpi
       - run: npx cap sync android
       - run: cd android && chmod +x gradlew && ./gradlew assembleDebug --stacktrace
