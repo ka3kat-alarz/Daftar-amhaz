@@ -1,0 +1,222 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>دفتر المحاسبة amhaz</title><meta name="theme-color" content="#14476B"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{color-scheme:light;--paper:#E8EDF3;--ink:#0B2A3A;--sub:#4F7284;--line:#CFE6F0;--btn:#14476B;--grad:linear-gradient(135deg,#14476B,#1A6B8A 48%,#0F766E);--f:'Cairo',Tahoma,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:0 16px 32px;background:var(--paper);color:var(--ink);font-family:var(--f);line-height:1.65}
+header{position:relative;overflow:hidden;max-width:760px;margin:0 auto 16px;padding:calc(30px + env(safe-area-inset-top,0px)) 24px 28px;background:var(--grad);color:#fff;border-radius:0 0 32px 32px;box-shadow:0 14px 30px rgba(3,105,161,.28)}
+header:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,255,255,.16);top:-90px;left:-60px}
+header:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.12);bottom:-55px;right:36px}
+header>*{position:relative;z-index:1}
+h1{margin:0 0 4px;font-size:32px;font-weight:800;line-height:1.25;color:#fff}
+header p{margin:0;color:#fff;opacity:.88;font-size:14.5px}
+.topbar{max-width:760px;margin:0 auto;display:flex}
+.topbar button{border:0;background:#fff;color:var(--btn);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(3,105,161,.12)}
+.hint{text-align:center;color:var(--sub);font-size:13px;margin:10px 0 14px}
+main{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.c{--g:linear-gradient(135deg,#14476B,#1A6B8A);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:140px;padding:16px;border-radius:24px;background:var(--g);color:#fff;cursor:pointer;box-shadow:0 12px 24px rgba(15,30,80,.18)}
+.c:nth-child(6n+2){--g:linear-gradient(135deg,#065F46,#10B981)}
+.c:nth-child(6n+3){--g:linear-gradient(135deg,#0F766E,#0F766E)}
+.c:nth-child(6n+4){--g:linear-gradient(135deg,#14476B,#1A6B8A)}
+.c:nth-child(6n+5){--g:linear-gradient(135deg,#0F766E,#065F46)}
+.c:nth-child(6n+6){--g:linear-gradient(135deg,#1A6B8A,#6EE7B7)}
+.c:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.17);bottom:-40px;left:-30px}
+.c:active{transform:scale(.97)}
+.c>*{position:relative;z-index:1}
+.ic{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.26);font-size:20px;font-weight:800}
+.c>.shop-head{position:static;display:block;margin:0}
+.shop-head b{display:block;margin:0;font-size:18px;font-weight:800;line-height:1.35;color:#fff;overflow-wrap:anywhere}
+.shop-actions{position:absolute;top:12px;left:12px}
+.shop-actions button{border:0;background:rgba(255,255,255,.26);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.yr{font-size:13.5px;opacity:.92;font-weight:600}
+.bottombar{display:flex;margin:18px auto 4px;max-width:760px}
+.bottombar button{width:100%;border:0;background:var(--grad);color:#fff;border-radius:18px;padding:15px;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit;box-shadow:0 10px 22px rgba(3,105,161,.3)}
+.btn-small{border:0;background:#DCE8F0;color:#14476B;border-radius:12px;padding:9px 14px;font-size:13px;font-weight:700;cursor:pointer;margin:3px;font-family:inherit}
+.btn-small.gold{background:var(--grad);color:#fff}
+#appContent.hidden{display:none}
+#settingsModal>div{border-radius:24px!important}
+:focus-visible{outline:3px solid #0F766E;outline-offset:2px}
+body{background:radial-gradient(60% 35% at 10% 4%,rgba(45,212,191,.45),transparent 70%),radial-gradient(55% 35% at 95% 30%,rgba(56,189,248,.45),transparent 70%),radial-gradient(60% 40% at 15% 96%,rgba(110,231,183,.4),transparent 70%),var(--paper);background-attachment:fixed}
+.c{border:1px solid rgba(255,255,255,.55);box-shadow:0 12px 26px rgba(3,105,161,.2),inset 0 1px 0 rgba(255,255,255,.5)}
+.c:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 55%);pointer-events:none}
+.ic,.shop-actions button{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.45)}
+.topbar button,.btn-small{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8)}
+@media(max-width:430px){body{padding:0 12px 24px}h1{font-size:28px}}
+@media(max-width:340px){main{grid-template-columns:1fr}}
+
+/* ===== MY PALETTE - كحلي + زمردي + ذهبي ===== */
+.c:nth-child(3n+1){ --g: linear-gradient(135deg,#0B2447,#14476B) !important; }
+.c:nth-child(3n+2){ --g: linear-gradient(135deg,#065F46,#0F766E) !important; }
+.c:nth-child(3n+3){ --g: linear-gradient(135deg,#14476B,#1A6B8A) !important; }
+.c{ border-bottom: 3px solid rgba(201,162,39,.9) !important; }
+button.primary, .btn-small.gold{ background: linear-gradient(135deg,#0B2447,#0F766E) !important; }
+</style></head><body><div id="appContent" class="hidden"><header><h1>دفتر المحاسبة</h1><p>إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر</p></header>
+<div class="topbar"><button onclick="openSettings()">⚙️ إعدادات</button></div>
+<div id="settingsModal" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:none;align-items:center;justify-content:center;padding:20px"><div style="background:#fff;border-radius:18px;padding:20px;width:100%;max-width:380px;text-align:center"><h3 style="margin:0 0 12px">⚙️ إعدادات البرنامج</h3><div id="settingsContent"></div><button onclick="closeSettings()" style="margin-top:14px;background:transparent;border:none;color:#718096;padding:8px;cursor:pointer">سكّر</button></div></div>
+<p class="hint">كبس على اسم المحل لتفتح الدفتر، وكبس ✏️ عدّل لتعديل اسم المحل.</p>
+<main id="shopsList"></main>
+<div class="bottombar"><button class="btn-add" onclick="addShop()">➕ زيد محل جديد</button></div><script>(function(){function has(u){try{var x=new XMLHttpRequest();x.open('GET',u,false);x.send();return x.status>=200&&x.status<300;}catch(e){return false;}}var V='https://www.gstatic.com/firebasejs/10.12.2/';['firebase-app-compat.js','firebase-auth-compat.js','firebase-firestore-compat.js'].forEach(function(f){document.write('<script src="'+(has('vendor/'+f)?'vendor/'+f:V+f)+'"><\/script>');});})();</script><script src="firebase-config.js"></script><script src="shim.js"></script>
+<script>if(!window.DaftarAuth){var a=document.getElementById("appContent");a.classList.remove("hidden");a.innerHTML='<p style="padding:30px;text-align:center;color:#c0392b">ملف shim.js ما انحمّل. تأكد إنو بنفس مجلد index.html.</p>';}</script>
+<script>
+// السنوات بتزيد لحالها: من 2026 لحد سنة اليوم + 5، وما بتقل عن 2035
+const START_YEAR=2026;
+const END_YEAR=Math.max(2035, new Date().getFullYear()+5);
+const YEARS=[]; for(let y=START_YEAR;y<=END_YEAR;y++) YEARS.push(y);
+const DEFAULT_SHOPS=[
+ {name:'الصمدي الرويس',code:'ruwais'},
+ {name:'كعكة الأرز',code:'arz'},
+ {name:'الصمدي البرج',code:'burj'},
+ {name:'الصمدي المجمع',code:'mujamma'},
+ {name:'ملحمة الصمدي',code:'malhama'},
+ {name:'محل 6',code:'shop6'},
+ {name:'محل 7',code:'shop7'},
+ {name:'محل 8',code:'shop8'},
+ {name:'محل 9',code:'shop9'},
+ {name:'محل 10',code:'shop10'}
+];
+function defaultShops(){ return JSON.parse(JSON.stringify(DEFAULT_SHOPS)); }
+
+// ===== المحلات: كل حساب إلو نسخة محلية ونسخة سحابية =====
+let shops=[];          // محلات المستخدم الحالي (فاضية قبل تسجيل الدخول)
+let shopsOwner=null;   // uid صاحب المحلات يلي بالذاكرة
+let shopsReady=false;  // true بعد ما تأكدنا من حالة السحابة (ما منكتب عالسحابة قبل هيك)
+let retryTimer=null;
+
+function shopsKey(uid){ return 'daftar2_shops_'+uid; }
+function dirtyKey(uid){ return 'daftar2_dirty_'+uid; }
+function readLocalShops(uid){ try{ const s=JSON.parse(localStorage.getItem(shopsKey(uid))||'null'); if(Array.isArray(s)) return s; }catch(e){} return null; }
+function writeLocalShops(){ if(!shopsOwner) return; try{ localStorage.setItem(shopsKey(shopsOwner), JSON.stringify(shops)); }catch(e){} }
+function setDirty(uid,v){ try{ if(v) localStorage.setItem(dirtyKey(uid),'1'); else localStorage.removeItem(dirtyKey(uid)); }catch(e){} }
+function isDirty(uid){ try{ return localStorage.getItem(dirtyKey(uid))==='1'; }catch(e){ return false; } }
+
+function saveShops(){
+  if(!shopsOwner) return;
+  writeLocalShops();
+  if(!shopsReady){ setDirty(shopsOwner,true); return; }   // السحابة لسا ما انقرت: ما منكتب فوقها
+  syncShopsToCloud();
+}
+async function syncShopsToCloud(){
+  const uid=shopsOwner; if(!uid || !shopsReady) return false;
+  try{
+    await firebase.firestore().collection('users').doc(uid).set({shops:shops, updatedAt:Date.now()},{merge:true});
+    setDirty(uid,false); return true;
+  }catch(e){ setDirty(uid,true); console.warn('shops sync failed',e); return false; }
+}
+async function loadShopsForUser(user){
+  const uid=user.uid;
+  clearTimeout(retryTimer);
+  shopsOwner=uid; shopsReady=false;
+  shops=readLocalShops(uid)||defaultShops();   // اعرض النسخة المحلية فوراً
+  renderShops();
+  let cloud=null, failed=false;
+  try{
+    const snap=await firebase.firestore().collection('users').doc(uid).get();
+    if(snap.exists && Array.isArray(snap.data().shops)) cloud=snap.data().shops;
+  }catch(e){ failed=true; }
+  if(shopsOwner!==uid) return;                 // تغيّر المستخدم أثناء التحميل
+  if(failed){                                  // نت ضعيف: لا تكتب شي عالسحابة، جرّب بعد شوي
+    retryTimer=setTimeout(function(){ if(shopsOwner===uid && !shopsReady) loadShopsForUser(user); },10000);
+    return;
+  }
+  shopsReady=true;
+  if(cloud && !isDirty(uid)){ shops=cloud; writeLocalShops(); renderShops(); }  // السحابة هي الأصل
+  else { await syncShopsToCloud(); }           // حساب جديد، أو تعديلات محلية ما اتزامنت
+}
+window.addEventListener('online',function(){ const u=DaftarAuth.currentUser(); if(u && !shopsReady) loadShopsForUser(u); });
+
+function onAuth(user){
+  renderLogin();
+  if(!user){ clearTimeout(retryTimer); shopsOwner=null; shopsReady=false; shops=[]; closeSettings(); renderShops(); return; }
+  if(shopsOwner===user.uid) return;
+  loadShopsForUser(user);
+}
+
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function renderShops(){
+ const el=document.getElementById('shopsList');
+ const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+ const curY=new Date().getFullYear();
+ el.innerHTML=shops.map((sh,idx)=>{
+  return `<div class="c" onclick="openShopDirect(${idx})" style="cursor:pointer"><span class="ic">${esc((sh.name||"").trim().charAt(0))}</span><div class="shop-head"><b>${esc(sh.name)}</b><div class="shop-actions"><button onclick="event.stopPropagation();editShop(${idx})" title="عدّل الاسم">${T.edit}</button></div></div><div class="yr">${getLang()==='en' ? 'Book '+curY : 'دفتر '+curY}</div></div>`;
+ }).join('');
+}
+function openShopDirect(idx){
+  const sh=shops[idx]; if(!sh) return;
+  const curY=new Date().getFullYear();
+  // فوت دغري على دفتر هالسنة، بلا أي شباك ولا اختيار
+  window.location.href=`ledger.html?b=${encodeURIComponent(sh.code+'-'+curY)}&y=${curY}&n=${encodeURIComponent(sh.name)}`;
+}
+function addShop(){
+ const name=prompt('اسم المحل الجديد:');
+ if(!name||!name.trim()) return;
+ const clean=name.trim();
+ // كود فريد للمحل الجديد - ما بيتكرر
+ const code='shop'+Date.now().toString().slice(-8);
+ shops.push({name:clean,code:code});
+ saveShops(); renderShops();
+}
+async function editShop(idx){
+ const sh=shops[idx]; if(!sh) return;
+ const choice=prompt('شو بدك تعمل بـ "'+sh.name+'"؟\nاكتب 1 للتعديل، 2 للحذف:', '1');
+ if(choice===null) return;
+ if(String(choice).trim()==='2'){
+  const okPw=await DaftarAuth.ask({mode:'confirm', title:'حط كلمة السر لتمسح المحل'});
+  if(!okPw) return;
+  if(!confirm('أكيد بدك تمسح "'+sh.name+'"؟')) return;
+  shops.splice(idx,1);
+  saveShops(); renderShops();
+  return;
+ }
+ const name=prompt('عدّل اسم المحل:', sh.name);
+ if(!name||!name.trim()) return;
+ sh.name=name.trim();
+ saveShops(); renderShops();
+}
+
+// ===== حساب Firebase (الدخول نفسو بيتحكم فيه shim.js) =====
+function changePassword(){ DaftarAuth.changeInteractive().then(function(){ renderLogin(); }); }
+function accLogout(){
+  if(!confirm('أكيد بدك تسجّل خروج؟')) return;
+  closeSettings();
+  DaftarAuth.logout();
+}
+// --- Language AR / EN ---
+const DM_LANGS = {
+  ar: { title:'دفتر المحاسبة', subtitle:'إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر', settings:'⚙️ إعدادات', hint:'كبس على اسم المحل لتفتح الدفتر، وكبس ✏️ عدّل لتعديل اسم المحل.', addShop:'➕ زيد محل جديد', close:'سكّر', settingsTitle:'⚙️ إعدادات البرنامج', welcome:'👋 أهلاً،', loggedGoogle:'مسجّل دخول عبر Google — ', loggedPhone:'📱 رقم: ', changePass:'🔑 تغيير كلمة السر', logout:'🚪 تسجيل خروج', notLogged:'👤 مش مسجّل دخول', loginHint:'سجّل دخول من الشاشة الرئيسية.', syncNote:'نفس الإيميل على أي تلفون = نفس المحلات ونفس المعلومات', passNote:'كلمة السر للحذف: فيك تغيرها من هون. المزامنة على السحابة: شغالة.', langTitle:'🌍 اللغة / Language', langHint:'اختر لغة البرنامج / Choose app language', edit:'✏️ عدّل' },
+  en: { title:'Accounting Book', subtitle:'Manage accounts & branches — tap shop to open book', settings:'⚙️ Settings', hint:'Tap shop name to open book, tap ✏️ Edit to edit shop name.', addShop:'+ Add new shop', close:'Close', settingsTitle:'⚙️ App Settings', welcome:'👋 Hello,', loggedGoogle:'Logged in via Google — ', loggedPhone:'📱 Phone: ', changePass:'🔑 Change password', logout:'🚪 Logout', notLogged:'👤 Not logged in', loginHint:'Login from main screen.', syncNote:'Same email on any phone = same shops and same data', passNote:'Delete password: you can change it here. Cloud sync: on.', langTitle:'🌍 Language / اللغة', langHint:'Choose app language / اختر لغة البرنامج', edit:'✏️ Edit' }
+};
+function getLang(){ try{ return localStorage.getItem('dm_lang')||'ar'; }catch(e){ return 'ar'; } }
+function setLang(l){ try{ localStorage.setItem('dm_lang', l); }catch(e){} renderLogin(); renderShops(); }
+function applyLang(){
+  const l=getLang(); const T=DM_LANGS[l]||DM_LANGS.ar;
+  document.documentElement.lang=l; document.documentElement.dir=(l==='ar'?'rtl':'ltr');
+  const h1=document.querySelector('header h1'); if(h1) h1.textContent=T.title;
+  const sub=document.querySelector('header p'); if(sub) sub.textContent=T.subtitle;
+  const stBtn=document.querySelector('button[onclick="openSettings()"]'); if(stBtn) stBtn.textContent=T.settings;
+  const hint=document.querySelector('.hint'); if(hint) hint.textContent=T.hint;
+  const addBtn=document.querySelector('button[onclick="addShop()"]'); if(addBtn) addBtn.textContent=T.addShop;
+  const closeBtn=document.querySelector('#settingsModal button[onclick="closeSettings()"]'); if(closeBtn) closeBtn.textContent=T.close;
+  const stTitle=document.querySelector('#settingsModal h3'); if(stTitle) stTitle.textContent=T.settingsTitle;
+  const arB=document.getElementById('langArBtn'); const enB=document.getElementById('langEnBtn');
+  if(arB&&enB){ if(l==='ar'){ arB.style.background='#14476B'; arB.style.color='#fff'; enB.style.background='#fff'; enB.style.color='#000'; } else { enB.style.background='#14476B'; enB.style.color='#fff'; arB.style.background='#fff'; arB.style.color='#000'; } }
+}
+function renderLogin(){
+  const el=document.getElementById('settingsContent');
+  const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+  const user=DaftarAuth.currentUser();
+  const box='text-align:right;background:#f5f7fb;border-radius:12px;padding:12px;margin-bottom:12px';
+  let acct;
+  if(user){
+    acct=`<div style="${box}"><b>${T.welcome} ${esc(user.email||'')}</b><div style="color:#718096;font-size:12px;margin-top:4px">${T.syncNote}</div></div><div><button class="btn-small gold" onclick="changePassword()">${T.changePass}</button><button class="btn-small" onclick="accLogout()">${T.logout}</button></div>`;
+  } else {
+    acct=`<b>${T.notLogged}</b><p>${T.loginHint}</p>`;
+  }
+  if(el) el.innerHTML=acct+`<div style="margin-top:16px;text-align:right;background:#fff7e0;border:1px solid #f0d48a;border-radius:12px;padding:12px"><b>🌍 اللغة / Language</b><div style="display:flex;gap:8px;margin-top:8px"><button onclick="setLang('ar')" id="langArBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #dce6f2;cursor:pointer">العربية</button><button onclick="setLang('en')" id="langEnBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #dce6f2;cursor:pointer">English</button></div><div style="color:#718096;font-size:12px;margin-top:6px">اختر لغة البرنامج / Choose app language</div></div>`;
+  applyLang();
+}
+function openSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='flex'; renderLogin(); }
+function closeSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='none'; }
+
+applyLang();
+renderLogin();
+renderShops();
+DaftarAuth.onChange(onAuth);
+</script></div></body></html>
