@@ -1,0 +1,261 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>دفتر المحاسبة amhaz</title><meta name="theme-color" content="#14476B"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root{color-scheme:light;--paper:#E8EDF3;--ink:#0B2A3A;--sub:#4F7284;--line:#CFE6F0;--btn:#14476B;--grad:linear-gradient(135deg,#14476B,#1A6B8A 48%,#0F766E);--f:'Cairo',Tahoma,Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:0 16px 32px;background:var(--paper);color:var(--ink);font-family:var(--f);line-height:1.65}
+header{position:relative;overflow:hidden;max-width:760px;margin:0 auto 16px;padding:calc(30px + env(safe-area-inset-top,0px)) 24px 28px;background:var(--grad);color:#fff;border-radius:0 0 32px 32px;box-shadow:0 14px 30px rgba(3,105,161,.28)}
+header:before{content:"";position:absolute;width:210px;height:210px;border-radius:50%;background:rgba(255,255,255,.16);top:-90px;left:-60px}
+header:after{content:"";position:absolute;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.12);bottom:-55px;right:36px}
+header>*{position:relative;z-index:1}
+h1{margin:0 0 4px;font-size:32px;font-weight:800;line-height:1.25;color:#fff}
+header p{margin:0;color:#fff;opacity:.88;font-size:14.5px}
+.topbar{max-width:760px;margin:0 auto;display:flex}
+.topbar button{border:0;background:#fff;color:var(--btn);border-radius:999px;padding:9px 18px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(3,105,161,.12)}
+.hint{text-align:center;color:var(--sub);font-size:13px;margin:10px 0 14px}
+main{max-width:760px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.c{--g:linear-gradient(135deg,#14476B,#1A6B8A);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;gap:16px;min-height:140px;padding:16px;border-radius:24px;background:var(--g);color:#fff;cursor:pointer;box-shadow:0 12px 24px rgba(15,30,80,.18)}
+.c:nth-child(6n+2){--g:linear-gradient(135deg,#065F46,#10B981)}
+.c:nth-child(6n+3){--g:linear-gradient(135deg,#0F766E,#0F766E)}
+.c:nth-child(6n+4){--g:linear-gradient(135deg,#14476B,#1A6B8A)}
+.c:nth-child(6n+5){--g:linear-gradient(135deg,#0F766E,#065F46)}
+.c:nth-child(6n+6){--g:linear-gradient(135deg,#1A6B8A,#6EE7B7)}
+.c:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.17);bottom:-40px;left:-30px}
+.c:active{transform:scale(.97)}
+.c>*{position:relative;z-index:1}
+.ic{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:14px;background:rgba(255,255,255,.26);font-size:20px;font-weight:800}
+.c>.shop-head{position:static;display:block;margin:0}
+.shop-head b{display:block;margin:0;font-size:18px;font-weight:800;line-height:1.35;color:#fff;overflow-wrap:anywhere}
+.shop-actions{position:absolute;top:12px;left:12px}
+.shop-actions button{border:0;background:rgba(255,255,255,.26);color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.yr{font-size:13.5px;opacity:.92;font-weight:600}
+.bottombar{display:flex;margin:18px auto 4px;max-width:760px}
+.bottombar button{width:100%;border:0;background:var(--grad);color:#fff;border-radius:18px;padding:15px;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit;box-shadow:0 10px 22px rgba(3,105,161,.3)}
+.btn-small{border:0;background:#DCE8F0;color:#14476B;border-radius:12px;padding:9px 14px;font-size:13px;font-weight:700;cursor:pointer;margin:3px;font-family:inherit}
+.btn-small.gold{background:var(--grad);color:#fff}
+#loginOverlay{position:fixed;inset:0;background:var(--grad);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{background:#fff;border-radius:28px;padding:28px 22px;max-width:400px;width:100%;text-align:center;box-shadow:0 24px 50px rgba(10,20,70,.35)}
+.login-box h2{margin:0 0 8px;font-size:26px;font-weight:800;color:var(--ink)}
+.login-box p{margin:0 0 16px;color:var(--sub);font-size:14px;line-height:1.7}
+#loginOverlay input{border:1.5px solid var(--line)!important;border-radius:14px!important;background:#F4FBFD;font-family:inherit}
+#loginOverlay input:focus{outline:0;border-color:var(--btn)!important;box-shadow:0 0 0 4px #14476B22}
+#loginOverlay button[onclick="accLogin()"]{background:var(--grad)!important;color:#fff!important;border-radius:16px!important;font-family:inherit}
+#loginOverlay button[onclick="accCreate()"]{background:#DCE8F0!important;color:#14476B!important;border-radius:16px!important;font-family:inherit}
+#loginOverlay button[onclick="accReset()"]{color:#14476B!important;font-family:inherit}
+#appContent.hidden{display:none}
+#settingsModal>div{border-radius:24px!important}
+:focus-visible{outline:3px solid #0F766E;outline-offset:2px}
+body{background:radial-gradient(60% 35% at 10% 4%,rgba(45,212,191,.45),transparent 70%),radial-gradient(55% 35% at 95% 30%,rgba(56,189,248,.45),transparent 70%),radial-gradient(60% 40% at 15% 96%,rgba(110,231,183,.4),transparent 70%),var(--paper);background-attachment:fixed}
+.c{border:1px solid rgba(255,255,255,.55);box-shadow:0 12px 26px rgba(3,105,161,.2),inset 0 1px 0 rgba(255,255,255,.5)}
+.c:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,0) 55%);pointer-events:none}
+.ic,.shop-actions button{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.45)}
+.topbar button,.btn-small{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.8)}
+.login-box{background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.9)}
+@media(max-width:430px){body{padding:0 12px 24px}h1{font-size:28px}}
+@media(max-width:340px){main{grid-template-columns:1fr}}
+
+/* ===== MY PALETTE - كحلي + زمردي + ذهبي ===== */
+.c:nth-child(3n+1){ --g: linear-gradient(135deg,#0B2447,#14476B) !important; }
+.c:nth-child(3n+2){ --g: linear-gradient(135deg,#065F46,#0F766E) !important; }
+.c:nth-child(3n+3){ --g: linear-gradient(135deg,#14476B,#1A6B8A) !important; }
+.c{ border-bottom: 3px solid rgba(201,162,39,.9) !important; }
+button.primary, .btn-small.gold{ background: linear-gradient(135deg,#0B2447,#0F766E) !important; }
+</style></head><body><div id="loginOverlay" style="display:none"><div class="login-box"><div style="margin-bottom:10px"><svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="4" width="32" height="36" rx="4" fill="#1A6B8A"/><rect x="29" y="4" width="5" height="36" fill="#0F766E"/><rect x="11" y="12" width="14" height="3" rx="1.5" fill="#fff"/><path d="M11 21h14M11 26h14M11 31h14" stroke="#fff" stroke-width="1.5" opacity=".7"/></svg></div><h2>دفتر المحاسبة</h2><p>سجّل دخول بحسابك لتشوف محلاتك ومعلوماتك على أي تلفون.<br><span style="font-size:12px">أول مرة؟ اكتب إيميلك وكلمة سر (6 أحرف على الأقل) واضغط «حساب جديد».</span></p><input id="accEmail" type="email" placeholder="الإيميل" autocomplete="email" style="display:block;width:100%;padding:13px;margin:7px 0;border:1px solid #dce6f2;border-radius:12px;font-size:15px;box-sizing:border-box;direction:ltr;text-align:left"><input id="accPass" type="password" placeholder="كلمة سر الحساب" autocomplete="current-password" style="display:block;width:100%;padding:13px;margin:7px 0;border:1px solid #dce6f2;border-radius:12px;font-size:15px;box-sizing:border-box;direction:ltr;text-align:left"><div id="accMsg" style="min-height:20px;font-size:13px;margin:4px 0;color:#c0392b"></div><button onclick="accLogin()" style="display:block;width:100%;border:none;border-radius:999px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;background:#174675;color:#fff">دخول</button><button onclick="accCreate()" style="display:block;width:100%;border:none;border-radius:999px;padding:14px;font-size:16px;font-weight:700;cursor:pointer;margin-top:8px;background:#e7b34d;color:#071a31">حساب جديد</button><button onclick="accReset()" style="background:transparent;border:none;color:#2e79b5;font-size:13px;padding:10px;cursor:pointer;margin-top:4px">نسيت كلمة سر الحساب؟</button></div></div><div id="appContent"><header><h1>دفتر المحاسبة</h1><p>إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر</p></header>
+<div class="topbar"><button onclick="openSettings()">⚙️ إعدادات</button></div>
+<div id="settingsModal" style="position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:10001;display:none;align-items:center;justify-content:center;padding:20px"><div style="background:#fff;border-radius:18px;padding:20px;width:100%;max-width:380px;text-align:center"><h3 style="margin:0 0 12px">⚙️ إعدادات البرنامج</h3><div id="settingsContent"></div><button onclick="closeSettings()" style="margin-top:14px;background:transparent;border:none;color:#718096;padding:8px;cursor:pointer">سكّر</button></div></div>
+<p class="hint">كبس ✏️ عدّل لتعديل اسم المحل.</p>
+<main id="shopsList"></main>
+<div class="bottombar"><button class="btn-add" onclick="addShop()">➕ زيد محل جديد</button></div><script>(function(){function has(u){try{var x=new XMLHttpRequest();x.open('GET',u,false);x.send();return x.status>=200&&x.status<300;}catch(e){return false;}}var V='https://www.gstatic.com/firebasejs/10.12.2/';['firebase-app-compat.js','firebase-auth-compat.js','firebase-firestore-compat.js'].forEach(function(f){document.write('<script src="'+(has('vendor/'+f)?'vendor/'+f:V+f)+'"><\/script>');});})();</script><script src="firebase-config.js"></script><script src="shim.js"></script><script>
+// السنوات بتزيد لحالها: من 2026 لحد سنة اليوم + 5، وما بتقل عن 2035
+const START_YEAR=2026;
+const END_YEAR=Math.max(2035, new Date().getFullYear()+5);
+const YEARS=[]; for(let y=START_YEAR;y<=END_YEAR;y++) YEARS.push(y);
+const DEFAULT_SHOPS=[
+ {name:'الصمدي الرويس',code:'ruwais'},
+ {name:'كعكة الأرز',code:'arz'},
+ {name:'الصمدي البرج',code:'burj'},
+ {name:'الصمدي المجمع',code:'mujamma'},
+ {name:'ملحمة الصمدي',code:'malhama'},
+ {name:'محل 6',code:'shop6'},
+ {name:'محل 7',code:'shop7'},
+ {name:'محل 8',code:'shop8'},
+ {name:'محل 9',code:'shop9'},
+ {name:'محل 10',code:'shop10'}
+];
+
+function getShopsKey(){ try{ var u=(window.firebase && firebase.auth) ? firebase.auth().currentUser : null; if(u) return 'daftar2_shops_'+u.uid; }catch(e){} return 'daftar2_shops_v1'; }
+const KEY = getShopsKey();
+function refreshShopsKey(){ try{ var k=getShopsKey(); if(k!==KEY){ return k; } }catch(e){} return KEY; }
+
+function loadShops(){
+ try{
+  const s=JSON.parse(localStorage.getItem(KEY)||'null');
+  if(Array.isArray(s)&&s.length) return s;
+ }catch(e){}
+ return JSON.parse(JSON.stringify(DEFAULT_SHOPS));
+}
+let shops=loadShops();
+function saveShops(){ try{ localStorage.setItem(getShopsKey(), JSON.stringify(shops)); }catch(e){} console.log('saved shop', shops.length); syncShopsToCloud(); }
+// ===== مزامنة سحابية: كل حساب بيشوف محلاته بس =====
+async function syncShopsToCloud(){
+  const u=DaftarAuth.currentUser(); if(!u) return;
+  try{ await firebase.firestore().collection('users').doc(u.uid).set({shops:shops, updatedAt:Date.now()},{merge:true}); }catch(e){}
+}
+async function loadShopsFromCloud(){
+  const u=DaftarAuth.currentUser(); if(!u) return false;
+  try{
+    const snap=await firebase.firestore().collection('users').doc(u.uid).get();
+    if(snap.exists){
+      const d=snap.data();
+      if(Array.isArray(d.shops) && d.shops.length){ shops=d.shops; saveShopsLocalOnly(); renderShops(); return true; }
+    }
+  }catch(e){}
+  return false;
+}
+function saveShopsLocalOnly(){ try{ localStorage.setItem(getShopsKey(), JSON.stringify(shops)); }catch(e){} }
+// لما نغيّر كلمة السر، زامنها على السحابة كمان
+const _origChangePassword = null;
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function renderShops(){
+ const el=document.getElementById('shopsList');
+ el.innerHTML=shops.map((sh,idx)=>{
+  const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+  const curY=new Date().getFullYear();
+  return `<div class="c" onclick="openShopDirect(${idx})" style="cursor:pointer"><span class="ic">${esc((sh.name||"").trim().charAt(0))}</span><div class="shop-head"><b>${esc(sh.name)}</b><div class="shop-actions"><button onclick="event.stopPropagation();editShop(${idx})" title="عدّل الاسم">${T.edit}</button></div></div><div class="yr">${getLang()==='en' ? 'Book '+curY : 'دفتر '+curY}</div></div>`;
+ }).join('');
+}
+function openShopDirect(idx){
+  const sh=shops[idx]; if(!sh) return;
+  const curY=new Date().getFullYear();
+  // فوت دغري على دفتر هالسنة، بلا أي شباك ولا اختيار
+  window.location.href=`ledger.html?b=${encodeURIComponent(sh.code+'-'+curY)}&y=${curY}&n=${encodeURIComponent(sh.name)}`;
+}
+function addShop(){
+ const name=prompt('اسم المحل الجديد:');
+ if(!name||!name.trim()) return;
+ const clean=name.trim();
+ // كود فريد للمحل الجديد - ما بيتكرر
+ const code='shop'+Date.now().toString().slice(-8);
+ shops.push({name:clean,code:code});
+ saveShops(); renderShops();
+}
+async function editShop(idx){
+ const sh=shops[idx]; if(!sh) return;
+ const choice=prompt('شو بدك تعمل بـ "'+sh.name+'"؟\nاكتب 1 للتعديل، 2 للحذف:', '1');
+ if(choice===null) return;
+ if(String(choice).trim()==='2'){
+  const okPw=await DaftarAuth.ask({mode:'confirm', title:'حط كلمة السر لتمسح المحل'});
+  if(!okPw) return;
+  if(!confirm('أكيد بدك تمسح "'+sh.name+'"؟')) return;
+  shops.splice(idx,1);
+  saveShops(); renderShops();
+  return;
+ }
+ const name=prompt('عدّل اسم المحل:', sh.name);
+ if(!name||!name.trim()) return;
+ sh.name=name.trim();
+ saveShops(); renderShops();
+}
+
+// ===== كلمة السر (مشفّرة - بتتحكم فيها shim.js) =====
+function changePassword(){ DaftarAuth.changeInteractive().then(function(){ renderLogin(); }); }
+
+// ===== حساب Firebase (إيميل + كلمة سر) =====
+let authReady=false;
+const CLOUD=DaftarAuth.cloudEnabled();
+function accMsg(m,ok){ const el=document.getElementById('accMsg'); if(el){ el.textContent=m||''; el.style.color=ok?'#2f855a':'#c0392b'; } }
+function accErr(e){
+  const c=(e&&e.code)||'';
+  if(/invalid-credential|wrong-password|user-not-found|invalid-login/.test(c)) return 'الإيميل أو كلمة السر غلط';
+  if(c==='auth/email-already-in-use') return 'هيدا الإيميل مسجّل من قبل، اضغط «دخول»';
+  if(c==='auth/weak-password') return 'كلمة السر ضعيفة، لازم 6 أحرف على الأقل';
+  if(c==='auth/invalid-email') return 'الإيميل مش مكتوب صح';
+  if(c==='auth/network-request-failed') return 'ما في انترنت';
+  if(c==='auth/too-many-requests') return 'محاولات كتير، استنّى شوي وجرّب';
+  if(c==='auth/operation-not-allowed') return 'لازم تفعّل Email/Password بـ Firebase Console';
+  return 'صار خطأ: '+((e&&e.message)||c||'');
+}
+function accVals(){ return {email:(document.getElementById('accEmail').value||'').trim(), pass:document.getElementById('accPass').value||''}; }
+async function accLogin(){
+  const v=accVals(); if(!v.email||!v.pass){ accMsg('اكتب الإيميل وكلمة السر'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  accMsg('⏳ لحظة...',true);
+  try{ await firebase.auth().signInWithEmailAndPassword(v.email,v.pass); accMsg(''); }catch(e){ accMsg(accErr(e)); }
+}
+async function accCreate(){
+  const v=accVals(); if(!v.email||!v.pass){ accMsg('اكتب الإيميل وكلمة السر'); return; }
+  if(v.pass.length<6){ accMsg('كلمة السر لازم 6 أحرف على الأقل'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  accMsg('⏳ لحظة...',true);
+  try{ await firebase.auth().createUserWithEmailAndPassword(v.email,v.pass); accMsg(''); }catch(e){ accMsg(accErr(e)); }
+}
+async function accReset(){
+  const v=accVals(); if(!v.email){ accMsg('اكتب إيميلك أول'); return; }
+  if(!DaftarAuth.sdkLoaded()){ accMsg('المزامنة ما حمّلت، تأكد من الانترنت'); return; }
+  try{ await firebase.auth().sendPasswordResetEmail(v.email); accMsg('✅ بعتنالك رابط على الإيميل لتغيّر كلمة سر الحساب',true); }catch(e){ accMsg(accErr(e)); }
+}
+function accLogout(){
+  if(!confirm('أكيد بدك تسجّل خروج؟')) return;
+  try{ firebase.auth().signOut(); }catch(e){}
+}
+function initAuth(){
+  if(!CLOUD || !DaftarAuth.sdkLoaded()){ authReady=true; renderLogin(); return; }
+  DaftarAuth.currentUser(); // بيجهّز Firebase
+  firebase.auth().onAuthStateChanged(function(u){
+    authReady=true; renderLogin();
+    if(u){ loadShopsFromCloud().then(function(found){ if(!found) syncShopsToCloud(); renderShops(); renderLogin(); }); }
+  });
+}
+// --- Language AR / EN ---
+const DM_LANGS = {
+  ar: { title:'دفتر المحاسبة', subtitle:'إدارة الحسابات والفروع — اختر المحل لتفتح الدفتر', settings:'⚙️ إعدادات', hint:'كبس على اسم المحل لتفتح الدفتر، وكبس ✏️ عدّل لتعديل اسم المحل.', addShop:'+ إضافة محل جديد', close:'سكّر', settingsTitle:'⚙️ إعدادات البرنامج', welcome:'👋 أهلاً،', loggedGoogle:'مسجّل دخول عبر Google — ', loggedPhone:'📱 رقم: ', changePass:'🔑 تغيير كلمة السر', logout:'🚪 تسجيل خروج', notLogged:'👤 مش مسجّل دخول', loginHint:'سجّل دخول من الشاشة الرئيسية.', syncNote:'نفس الإيميل على أي تلفون = نفس المحلات ونفس المعلومات', passNote:'كلمة السر للحذف: فيك تغيرها من هون. المزامنة على السحابة: شغالة.', langTitle:'🌍 اللغة / Language', langHint:'اختر لغة البرنامج / Choose app language', edit:'✏️ عدّل' },
+  en: { title:'Accounting Book', subtitle:'Manage accounts & branches — tap shop to open book', settings:'⚙️ Settings', hint:'Tap shop name to open book, tap ✏️ Edit to edit shop name.', addShop:'+ Add new shop', close:'Close', settingsTitle:'⚙️ App Settings', welcome:'👋 Hello,', loggedGoogle:'Logged in via Google — ', loggedPhone:'📱 Phone: ', changePass:'🔑 Change password', logout:'🚪 Logout', notLogged:'👤 Not logged in', loginHint:'Login from main screen.', syncNote:'Same Gmail on any phone = same shops and same data', passNote:'Delete password: you can change it here. Cloud sync: on.', langTitle:'🌍 Language / اللغة', langHint:'Choose app language / اختر لغة البرنامج', edit:'✏️ Edit' }
+};
+function getLang(){ try{ return localStorage.getItem('dm_lang')||'ar'; }catch(e){ return 'ar'; } }
+function setLang(l){ try{ localStorage.setItem('dm_lang', l); }catch(e){} applyLang(); renderLogin(); }
+function applyLang(){
+  const l=getLang(); const T=DM_LANGS[l]||DM_LANGS.ar;
+  document.documentElement.lang=l; document.documentElement.dir=(l==='ar'?'rtl':'ltr');
+  const h1=document.querySelector('header h1'); if(h1) h1.textContent=T.title;
+  const sub=document.querySelector('header p'); if(sub) sub.textContent=T.subtitle;
+  const stBtn=document.querySelector('button[onclick="openSettings()"]'); if(stBtn) stBtn.textContent=T.settings;
+  const hint=document.querySelector('.hint'); if(hint) hint.textContent=T.hint;
+  const addBtn=document.querySelector('button[onclick="addShop()"]'); if(addBtn) addBtn.textContent=T.addShop;
+  const closeBtn=document.querySelector('#settingsModal button[onclick="closeSettings()"]'); if(closeBtn) closeBtn.textContent=T.close;
+  const stTitle=document.querySelector('#settingsModal h3'); if(stTitle) stTitle.textContent=T.settingsTitle;
+  // lang buttons highlight
+  const arB=document.getElementById('langArBtn'); const enB=document.getElementById('langEnBtn');
+  if(arB&&enB){ if(l==='ar'){ arB.style.background='#14476B'; arB.style.color='#fff'; enB.style.background='#fff'; enB.style.color='#000'; } else { enB.style.background='#14476B'; enB.style.color='#fff'; arB.style.background='#fff'; arB.style.color='#000'; } }
+  // edit buttons
+  document.querySelectorAll('button[onclick^="editShop"]').forEach(b=>{ if(b.textContent.includes('عدّل')||b.textContent.includes('Edit')) b.textContent=T.edit; });
+}
+function renderLogin(){
+  const el=document.getElementById('settingsContent');
+  const overlay=document.getElementById('loginOverlay');
+  const app=document.getElementById('appContent');
+  const T=DM_LANGS[getLang()]||DM_LANGS.ar;
+  const en=getLang()==='en';
+  const user=CLOUD?DaftarAuth.currentUser():null;
+  const needLogin=CLOUD && !user;
+  if(overlay) overlay.style.display=(needLogin && authReady)?'flex':'none';
+  if(app) app.classList.toggle('hidden', needLogin);
+  if(needLogin && authReady && !DaftarAuth.sdkLoaded()) accMsg('ما قدرت حمّل المزامنة. تأكد من الانترنت وافتح البرنامج من جديد.');
+  const box='text-align:right;background:#f5f7fb;border-radius:12px;padding:12px;margin-bottom:12px';
+  let acct;
+  if(CLOUD && user){
+    acct=`<div style="${box}"><b>${T.welcome} ${esc(user.email||'')}</b><div style="color:#718096;font-size:12px;margin-top:4px">${T.syncNote}</div></div><div><button class="btn-small gold" onclick="changePassword()">${T.changePass}</button><button class="btn-small" onclick="accLogout()">${T.logout}</button></div>`;
+  } else if(CLOUD){
+    acct=`<b>${T.notLogged}</b><p>${T.loginHint}</p>`;
+  } else {
+    acct=`<div style="${box}"><b>📱 ${en?'Local mode (no sync)':'وضع محلي (بدون مزامنة)'}</b><div style="color:#718096;font-size:12px;margin-top:4px">${en?'Data is saved on this phone only. Fill firebase-config.js to enable sync.':'المعلومات محفوظة على هالتلفون بس. لتفعيل المزامنة عبّي إعدادات Firebase بملف firebase-config.js.'}</div></div><div><button class="btn-small gold" onclick="changePassword()">${T.changePass}</button></div>`;
+  }
+  if(el) el.innerHTML=acct+`<div style="margin-top:16px;text-align:right;background:#fff7e0;border:1px solid #f0d48a;border-radius:12px;padding:12px"><b>🌍 اللغة / Language</b><div style="display:flex;gap:8px;margin-top:8px"><button onclick="setLang('ar')" id="langArBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #1b3a5f;background:#1b3a5f;color:#fff;font-weight:bold;cursor:pointer">العربية</button><button onclick="setLang('en')" id="langEnBtn" style="flex:1;padding:10px;border-radius:10px;border:1px solid #dce6f2;background:#fff;cursor:pointer">English</button></div><div style="color:#718096;font-size:12px;margin-top:6px">اختر لغة البرنامج / Choose app language</div></div>`;
+}
+function openSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='flex'; renderLogin(); }
+function closeSettings(){ const m=document.getElementById('settingsModal'); if(m) m.style.display='none'; }
+document.addEventListener('keydown', function(e){
+  if(e.key==='Enter'){ const ov=document.getElementById('loginOverlay'); if(ov && ov.style.display==='flex'){ accLogin(); } }
+});
+document.addEventListener('daftar-auth-ready', function(){ try{ var k=getShopsKey(); var s=JSON.parse(localStorage.getItem(k)||'null'); if(Array.isArray(s) && s.length){ shops=s; renderShops(); } loadShopsFromCloud(); }catch(e){} });
+renderLogin();
+renderShops();
+initAuth();
+</script></div></body></html>
